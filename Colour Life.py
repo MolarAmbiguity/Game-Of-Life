@@ -106,7 +106,7 @@ def board():
     #print('called board')
     next_board()
     populate_board()
-    root.after(1000,board)
+    root.after(1,board)
 
-root.after(1000,board)
+root.after(1,board)
 root.mainloop()
