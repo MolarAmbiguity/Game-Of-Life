@@ -1,7 +1,3 @@
-'''
-Program By MolarAmbiguity, created at the 2014 South Coast Hackathon (29th and 30th Nov)
-'''
-
 from tkinter import *
 import random
 
