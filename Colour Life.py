@@ -22,6 +22,8 @@ CellDraw =Canvas(root,bg='white',width=501,height=501)
 root.wm_title('Life of Python)')
 CellDraw.pack()
 
+CellDrawGrid = [[CellDraw.create_rectangle(x*10,y*10,x*10+10,y*10+10) for y in range(50)] for x in range(50)]
+
 def dead_or_alive(CellToCheck):
     if CellList[CellToCheck] > 0:
         return 1
@@ -66,8 +68,7 @@ def next_board():
 
 def update_cell(x,y,colour):
     #print('called update_cell')
-    CellDraw.create_rectangle(x,y,x+10,y+10,fill=colour)
-    CellDraw.pack()
+    CellDraw.itemconfig(CellDrawGrid[x//10][y//10],fill=colour)
     
 def reset_board():
     x=y=2
@@ -106,7 +107,7 @@ def board():
     #print('called board')
     next_board()
     populate_board()
-    root.after(1000,board)
+    root.after(1,board)
 
-root.after(1000,board)
+root.after(1,board)
 root.mainloop()
