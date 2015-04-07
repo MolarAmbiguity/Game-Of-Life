@@ -67,7 +67,6 @@ def next_board():
 def update_cell(x,y,colour):
     #print('called update_cell')
     CellDraw.create_rectangle(x,y,x+10,y+10,fill=colour)
-    CellDraw.pack()
     
 def reset_board():
     x=y=2
